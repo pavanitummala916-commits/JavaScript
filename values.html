@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <input type="number" placeholder="Enter value 1" />
+    <input type="number" placeholder="Enter value 2" />
+    <input type="text" placeholder="Enter operator (+,-,/,*,**)" />
+
+    <button onclick="calculate()">Get Answer</button>
+
+    <h1 id="res">Result:</h1>
+
+    <script>
+      function calculate() {
+        let inputs = document.querySelectorAll("input");
+
+        let value1 = Number(inputs[0].value);
+        let value2 = Number(inputs[1].value);
+        let operator = inputs[2].value;
+
+        let res = 0;
+
+        if (operator == "+") {
+          res = value1 + value2;
+        } else if (operator == "-") {
+          res = value1 - value2;
+        } else if (operator == "*") {
+          res = value1 * value2;
+        } else if (operator == "/") {
+          res = value1 / value2;
+        } else if (operator == "**") {
+          res = value1 ** value2;
+        } else {
+          res = "Invalid Operator";
+        }
+
+        document.getElementById("res").innerHTML = "Result: " + res;
+      }
+    </script>
+  </body>
+</html>
