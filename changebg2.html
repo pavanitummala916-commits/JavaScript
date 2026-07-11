@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Changer</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      button {
+        padding: 15px 30px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn" onclick="changeColor()">Red</button>
+
+    <script>
+      let colors = ["red", "blue", "green", "yellow"];
+      let nextText = ["Blue", "Green", "Yellow", "Red"];
+      let index = 0;
+
+      function changeColor() {
+        document.body.style.backgroundColor = colors[index];
+        document.getElementById("btn").innerHTML = nextText[index];
+        index = (index + 1) % colors.length;
+      }
+    </script>
+  </body>
+</html>
