@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="xyz" type="text" />
+    <button onclick="show()">Click</button>
+    <h1 id="result"></h1>
+
+    <script>
+      function show() {
+        // getting data
+        let name = document.getElementById("xyz").value;
+
+        // processing data
+        let res = "My Name is " + name;
+
+        // sending back processed data
+        document.getElementById("result").innerText = res;
+      }
+    </script>
+  </body>
+</html>
